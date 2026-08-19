@@ -1,83 +1,82 @@
-sprint: "Sprint 0"
-task_type: "small_task"
-description: >
-  Lightweight task list for quick Sprint 0 items (documentation updates,
-  small setup chores, etc.) — not full backlog stories.
+name: "Small Task"
+description: "Use this for small tasks like updating documentation, minor fixes, or quick chores."
+title: "[Task]: "
+labels:
+  - "small-task"
+  - "documentation"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a small task! Please fill out the details below.
 
-tasks:
-  - id: T-001
-    title: "Update Product Vision Statement"
-    category: documentation
-    priority: high
-    estimate_hours: 2
-    status: not_started       # options: not_started | in_progress | blocked | done
-    assignee: ""
-    notes: "Draft with PO, confirm target users and success metrics."
+  - type: input
+    id: summary
+    attributes:
+      label: Task Summary
+      description: A short, clear description of the task
+      placeholder: "e.g. Update Definition of Done in team wiki"
+    validations:
+      required: true
 
-  - id: T-002
-    title: "Draft initial Product Backlog"
-    category: documentation
-    priority: high
-    estimate_hours: 4
-    status: not_started
-    assignee: ""
-    notes: "Rough user stories, no need for full acceptance criteria yet."
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of task is this?
+      options:
+        - Documentation
+        - Tooling / Setup
+        - Technical Documentation
+        - Process / Team Agreement
+        - Other
+    validations:
+      required: true
 
-  - id: T-003
-    title: "Write Definition of Done"
-    category: documentation
-    priority: medium
-    estimate_hours: 1
-    status: not_started
-    assignee: ""
-    notes: "Agree as a team; post in shared wiki."
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
 
-  - id: T-004
-    title: "Write Definition of Ready"
-    category: documentation
-    priority: medium
-    estimate_hours: 1
-    status: not_started
-    assignee: ""
-    notes: ""
+  - type: input
+    id: estimate
+    attributes:
+      label: Estimate (hours)
+      description: Rough time estimate to complete this task
+      placeholder: "e.g. 1"
+    validations:
+      required: false
 
-  - id: T-005
-    title: "Set up sprint board in tracking tool"
-    category: tooling
-    priority: high
-    estimate_hours: 1
-    status: not_started
-    assignee: ""
-    notes: "Jira / Azure DevOps / Trello — confirm columns and workflow."
+  - type: textarea
+    id: details
+    attributes:
+      label: Details / Notes
+      description: Any additional context, links, or acceptance criteria
+      placeholder: "e.g. Update to reflect new sprint cadence, link to wiki page X"
+    validations:
+      required: false
 
-  - id: T-006
-    title: "Document team working agreement"
-    category: documentation
-    priority: medium
-    estimate_hours: 1
-    status: not_started
-    assignee: ""
-    notes: "Core hours, comms channels, meeting cadence."
+  - type: input
+    id: assignee
+    attributes:
+      label: Suggested Assignee
+      description: Optional — who should pick this up
+      placeholder: "@username"
+    validations:
+      required: false
 
-  - id: T-007
-    title: "Update environment setup docs"
-    category: technical_documentation
-    priority: medium
-    estimate_hours: 2
-    status: not_started
-    assignee: ""
-    notes: "Dev/test/staging setup steps, repo access."
-
-  - id: T-008
-    title: "Log initial risks and assumptions"
-    category: documentation
-    priority: low
-    estimate_hours: 1
-    status: not_started
-    assignee: ""
-    notes: ""
-
-meta:
-  created_by: ""
-  last_updated: ""
-  review_cadence: "weekly"
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked this task doesn't already exist
+          required: true
+        - label: This task is small enough to complete in one sitting
+          required: false
