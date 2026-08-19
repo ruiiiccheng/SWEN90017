@@ -1,0 +1,83 @@
+sprint: "Sprint 0"
+task_type: "small_task"
+description: >
+  Lightweight task list for quick Sprint 0 items (documentation updates,
+  small setup chores, etc.) — not full backlog stories.
+
+tasks:
+  - id: T-001
+    title: "Update Product Vision Statement"
+    category: documentation
+    priority: high
+    estimate_hours: 2
+    status: not_started       # options: not_started | in_progress | blocked | done
+    assignee: ""
+    notes: "Draft with PO, confirm target users and success metrics."
+
+  - id: T-002
+    title: "Draft initial Product Backlog"
+    category: documentation
+    priority: high
+    estimate_hours: 4
+    status: not_started
+    assignee: ""
+    notes: "Rough user stories, no need for full acceptance criteria yet."
+
+  - id: T-003
+    title: "Write Definition of Done"
+    category: documentation
+    priority: medium
+    estimate_hours: 1
+    status: not_started
+    assignee: ""
+    notes: "Agree as a team; post in shared wiki."
+
+  - id: T-004
+    title: "Write Definition of Ready"
+    category: documentation
+    priority: medium
+    estimate_hours: 1
+    status: not_started
+    assignee: ""
+    notes: ""
+
+  - id: T-005
+    title: "Set up sprint board in tracking tool"
+    category: tooling
+    priority: high
+    estimate_hours: 1
+    status: not_started
+    assignee: ""
+    notes: "Jira / Azure DevOps / Trello — confirm columns and workflow."
+
+  - id: T-006
+    title: "Document team working agreement"
+    category: documentation
+    priority: medium
+    estimate_hours: 1
+    status: not_started
+    assignee: ""
+    notes: "Core hours, comms channels, meeting cadence."
+
+  - id: T-007
+    title: "Update environment setup docs"
+    category: technical_documentation
+    priority: medium
+    estimate_hours: 2
+    status: not_started
+    assignee: ""
+    notes: "Dev/test/staging setup steps, repo access."
+
+  - id: T-008
+    title: "Log initial risks and assumptions"
+    category: documentation
+    priority: low
+    estimate_hours: 1
+    status: not_started
+    assignee: ""
+    notes: ""
+
+meta:
+  created_by: ""
+  last_updated: ""
+  review_cadence: "weekly"

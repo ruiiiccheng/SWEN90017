@@ -1,4 +1,4 @@
-# Meeting — <Title>
+# Meeting — 
 
 **Date/time:**  
 **Attendees:**  
