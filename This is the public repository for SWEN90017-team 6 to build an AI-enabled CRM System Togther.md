@@ -1,0 +1,1 @@
+This is the public repository for SWEN90017-team 6 to build an AI-enabled CRM System Togther
