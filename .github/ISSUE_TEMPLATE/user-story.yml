@@ -1,0 +1,53 @@
+name: User story
+description: Define user value and testable acceptance criteria
+title: "[STORY] "
+labels: ["type: story", "status: refinement"]
+body:
+  - type: input
+    id: story_id
+    attributes:
+      label: Story ID
+      placeholder: ACC-01
+    validations:
+      required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      description: As <persona>, I want <capability>, so that <value>.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence status
+      options:
+        - Confirmed in client source
+        - Proposed for client approval
+        - Decision pending
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source trace / decision link
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Use a checklist of observable outcomes.
+      value: |-
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies, risks and open questions
+  - type: textarea
+    id: test_notes
+    attributes:
+      label: Test data and demonstration notes
