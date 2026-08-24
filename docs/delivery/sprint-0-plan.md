@@ -37,6 +37,6 @@ Create a shared, evidence-based product baseline and a reproducible technical st
 
 1. Show the running baseline.
 2. Show the system capability/gap map.
-3. Walk through the approved core entity model and first end-to-end scenario.
+3. Walk through the approved core entity model and first end-to-end scenario, supported by early low-fi wireframes.
 4. Present the architecture decision and trade-offs.
 5. Confirm Sprint 1 goal and selected backlog with the Product Owner.
