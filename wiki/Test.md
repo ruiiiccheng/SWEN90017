@@ -1,1 +1,0 @@
-- [#999] Test issue title (https://github.com/ruiiiccheng/SWEN90017/issues/999)
