@@ -16,13 +16,14 @@ jobs:
 
       - name: Update wiki page
         env:
+          ISSUE_NUM: ${{ github.event.issue.number }}
           ASSIGNEES_JSON: ${{ toJson(github.event.issue.assignees) }}
         run: |
           cd wiki
           echo "$ASSIGNEES_JSON" | jq -r '.[].login' | while read -r login; do
             file="member-memory-template-${login}.md"
             if [ -f "$file" ]; then
-              grep -v "\[#${ISSUE_NUM} -" "$file" > tmp.md && mv tmp.md "$file"
+              grep -v "\[#${ISSUE_NUM} -" "$file" > tmp.md || true
               mv tmp.md "$file"
             fi
           done
