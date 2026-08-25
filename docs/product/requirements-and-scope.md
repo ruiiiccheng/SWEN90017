@@ -21,8 +21,8 @@
 | Activity history | Retain notes and completed/planned interactions in context. | Confirmed desired behaviour; current gap |
 | Lookup/search | Find and link accounts and other related records. | Confirmed through demonstration |
 | Workflow agents | Set up and implement at least one controlled workflow through agent integration. | Confirmed objective; exact use case pending |
-| IP-safe UI | Remove Salesforce branding/look-and-feel from the delivered implementation. | Confirmed |
-| Repository/process | GitHub, branches, Markdown memory, reviewable changes and documented requirements. | Confirmed |
+| IP-safe UI | Remove Salesforce branding/look-and-feel from the delivered implementation. | Proposed |
+| Repository/process | GitHub, branches, Markdown memory, reviewable changes and documented requirements. | Proposed |
 
 ### Proposed operational baseline
 
