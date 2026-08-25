@@ -1,62 +1,49 @@
 # ADR-0001 — Select Application Architecture
 
-**Status:** Proposed / decision pending  
+**Status:** Proposed — final decision blocked by starter-repository audit  
 **Decision owners:** Student development team, with Product Owner and lecturer input  
-**Decision deadline:** End of Sprint 0
+**Last updated:** 25 August 2026
 
 ## Context
 
-The inherited system appears to combine a PostgreSQL database, Alembic migrations, Python server-side rendering and small client-side lookup components. The transcript references both FastAPI and Flask/Jinja-like rendering, so the actual repository must be inspected. The meeting also raised React and Go as possible reimplementation choices.
+The client described a PostgreSQL/Alembic CRM implemented in Python with server-rendered templates, limited API support and small embedded React lookups. Both FastAPI and Flask were mentioned, and the team has not yet inspected the intended public Bootstrap repository. React/Python and React/Go alternatives were discussed, but no replacement decision was made.
 
-The team needs an architecture that supports the course timeline, core CRM CRUD/relationships, controlled AI workflows, tests and local development without retaining Salesforce visual/IP dependencies.
+The architecture must deliver a coherent CRM vertical slice within the course schedule, remove Salesforce presentation/IP dependencies and leave a controlled boundary for later AI workflow integration.
 
 ## Options
 
-### Option A — Extend the inherited Python/server-rendered Bootstrap application
+| Option | Main benefit | Main risk |
+|---|---|---|
+| A. Extend Python + server-rendered Bootstrap | Maximum reuse and lowest initial delivery risk if the starter is coherent. | Inherited gaps or mixed framework boundaries may slow change. |
+| B. React UI + Python API | Clear UI/API separation while retaining Python and potentially reusable domain/data code. | Additional front-end, API, authentication and integration work. |
+| C. React UI + Go API | Clean replacement boundary and Go learning opportunity. | Highest rewrite and schedule risk; no demonstrated performance need. |
 
-**Advantages:** fastest reuse path if the code is coherent; lower rewrite risk; existing schema/migrations may be reusable.  
-**Risks:** inherited placeholders and mixed architecture may slow change; API surface may be incomplete; modern interactive workflows may be harder.
+## Interim decision
 
-### Option B — React front end + Python/FastAPI API
+The final stack remains undecided until the audit and spike are complete. Until then:
 
-**Advantages:** separates UI/API, reuses Python knowledge and potentially existing API/domain code; suitable for interactive workflow UI.  
-**Risks:** creates more moving parts; may require substantial API completion and front-end rebuild.
+1. Evaluate the starter repository before discarding it.
+2. Keep requirements, domain modelling and the low-fi prototype stack-neutral.
+3. Do not begin a full React or Go rewrite solely for novelty.
+4. Prefer the smallest architecture that can deliver and test the Sprint 1 Account–Contact–Task vertical slice.
+5. Reuse PostgreSQL/Alembic only after their condition and fit are verified.
 
-### Option C — React front end + Go API
+## Selection criteria
 
-**Advantages:** clear service boundary and Go learning opportunity; potentially strong static typing and deployment characteristics.  
-**Risks:** highest rewrite/skill/schedule risk; may discard usable code; no evidence that CRM load requires a new backend language.
+1. Ability to deliver the agreed MVP and vertical slice on time.
+2. Amount and quality of verified reusable code and schema.
+3. Team capability and integration risk.
+4. Maintainability, testability and clear business-logic boundaries.
+5. Reproducible local development and CI.
+6. Suitability for the selected AI workflow without premature complexity.
 
-## Decision criteria and suggested weights
+## Evidence required before acceptance
 
-| Criterion | Weight |
-|---|---:|
-| Ability to deliver the agreed MVP on time | 30% |
-| Reuse of verified working code/data model | 15% |
-| Team capability and learning curve | 15% |
-| Testability and maintainability | 15% |
-| Support for AI/workflow integration | 10% |
-| Local deployment and CI simplicity | 10% |
-| Responsiveness and user experience | 5% |
+- Complete [starter-repository-audit.md](starter-repository-audit.md).
+- Run the same Account → Contact lookup/link → related Task flow from a clean checkout.
+- Compare the leading options using a small implementation spike rather than feature-count assumptions.
+- Record the selected option, rejected alternatives and concrete consequences here; then update decision `D-007`.
 
-## Spike tasks
+## Current consequence
 
-1. Run the public starter repository from a clean checkout.
-2. Trace one vertical flow: create account → contact lookup/link → related task.
-3. Inventory API endpoints, templates/components, migrations and test coverage.
-4. Implement or prototype the same smallest missing interaction in the leading options.
-5. Score options against the agreed criteria and record evidence.
-
-## Decision
-
-Not yet made.
-
-## Consequences to record after selection
-
-- Repository structure and service boundaries.
-- Data-access and migration strategy.
-- Authentication/session approach.
-- Front-end state/data-fetching approach.
-- Workflow/agent integration boundary.
-- Local Docker/development topology.
-- Test strategy and deployment path.
+No final `/frontend`, `/backend` or service split should be treated as approved. The current [architecture overview](architecture-overview.md) is a logical baseline, not an as-built diagram.
