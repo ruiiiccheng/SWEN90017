@@ -1,4 +1,4 @@
-name: Remove Tasks on Cloed Issue
+name: Remove Tasks on Closed Issue
 
 on:
   issues:
