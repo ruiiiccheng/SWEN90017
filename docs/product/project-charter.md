@@ -1,6 +1,5 @@
 # Project Charter — AI-enabled CRM
 
-**Status:** Draft for product-owner validation  
 **Prepared:** 5 August 2026
 
 ## Product vision
