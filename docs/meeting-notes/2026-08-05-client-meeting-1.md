@@ -1,6 +1,6 @@
-# Client Discovery Meeting — Minutes
+# Client Meeting 1 — Discovery Minutes
 
-**Meeting date:** Not supplied  
+**Meeting date:** 5 August 2026  
 **Prepared:** 5 August 2026  
 **Source quality:** Automated/rough transcript; speaker attribution follows the roles supplied by the student team and is uncertain in short interjections.
 
@@ -97,7 +97,7 @@ GitHub was set up during the latter part of the meeting. Suggested practices inc
 
 ## Transcript cautions
 
-- The meeting date and some names/course identifiers are not clear enough to record as fact.
+- The exact meeting time and some names/course identifiers are not clear enough to record as fact.
 - The transcript alternates between FastAPI and Flask/server-rendered terminology; verify the repository.
 - The spoken email address was mistranscribed; use the project-background address supplied separately.
 - “Jinja” appears to have been transcribed as “Ginger”. This pack records the uncertainty rather than treating the correction as source fact.
